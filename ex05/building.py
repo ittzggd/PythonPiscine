@@ -2,6 +2,16 @@ import sys
 
 
 def count_letters():
+    """
+    This script counts various types of characters in a given text input.
+
+    Functions:
+    - count_letters(): Reads text input from a command-line argument
+    or standard input, then counts total characters, upper and
+    lower case letters, punctuation marks, spaces, and digits.
+    Prints the counts.
+    """
+
     total: int = 0
     lower: int = 0
     upper: int = 0
@@ -12,10 +22,10 @@ def count_letters():
 
     n = len(sys.argv)
 
-    if n > 3:
+    if n > 2:
         raise AssertionError(": more than one argument is provided")
 
-    if n < 2:
+    if n < 2 or sys.argv[1] is None:
         print("What is the text to count?")
         text = sys.stdin.read()
     else:
@@ -43,6 +53,9 @@ def count_letters():
 
 
 def main():
+    '''
+    Main function to execute the character counting script.
+    '''
     try:
         count_letters()
     except AssertionError as msg:

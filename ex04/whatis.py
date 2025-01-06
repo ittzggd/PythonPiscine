@@ -1,10 +1,10 @@
 import sys
 
-def determine_arg() :
+def wathis() :
     if len(sys.argv) > 2 :
         raise AssertionError(": more than one argument is provided")
     elif len(sys.argv) < 2:
-        raise AssertionError(": less than one argument is provided")
+        return
     try :
         int(sys.argv[1])
     except:
@@ -15,6 +15,6 @@ def determine_arg() :
         print("I'm Odd")
 
 try:
-    determine_arg()
+    wathis()
 except AssertionError as msg:
     print(f"AssertionError: {msg}")
